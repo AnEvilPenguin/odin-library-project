@@ -1,4 +1,19 @@
 body {
     padding: 0px;
     margin: 0px;
+    display: grid;
+    grid-template-rows: 1fr 8fr 1fr;
+}
+
+.header {
+    background-color: cyan;
+    min-height: 10vh;
+}
+
+.library {
+    background-color: peru;
+}
+
+.footer {
+    background-color: goldenrod;
 }
