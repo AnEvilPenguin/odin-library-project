@@ -8,6 +8,10 @@ body {
     background-position: center;
 }
 
+ul {
+    list-style: none;
+}
+
 .header {
     background-color: cyan;
     min-height: 10vh;
