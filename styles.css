@@ -3,15 +3,24 @@ body {
     margin: 0px;
     display: grid;
     grid-template-rows: 1fr 8fr 1fr;
+    background-image: url("./assets/library.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 .header {
     background-color: cyan;
     min-height: 10vh;
+    display: flex;
+}
+
+.header img {
+    height: min(5vh, 75px);
+    width: min(5vh, 75px);
 }
 
 .library {
-    background-color: peru;
+    background-color: rgb(10 10 10 / 50%);
 }
 
 .footer {
