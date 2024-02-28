@@ -53,7 +53,25 @@ ul {
     font-size: 1rem;
 }
 
-.card>p {
+.details {
+    display: flex;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+}
+
+.icons svg {
+    width: 50px;
+}
+
+icons svg:first-of-type {
+    margin-left: auto;
+}
+
+.card p {
     margin: 4px;
 }
 
