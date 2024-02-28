@@ -4,8 +4,12 @@ body {
     display: grid;
     grid-template-rows: 1fr 8fr 1fr;
     background-image: url("./assets/library.jpg");
-    background-size: cover;
     background-position: center;
+    height: 100vh;
+}
+
+body>* {
+    padding: 8px;
 }
 
 ul {
@@ -14,17 +18,39 @@ ul {
 
 .header {
     background-color: cyan;
-    min-height: 10vh;
     display: flex;
+    align-items: center;
 }
 
 .header img {
-    height: min(5vh, 75px);
-    width: min(5vh, 75px);
+    width: min(50%, 75px);
 }
 
 .library {
     background-color: rgb(10 10 10 / 50%);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: repeat(2, minmax(300px, 1fr));
+    gap: 8px;
+}
+
+.card {
+    border-radius: 20px;
+    background-color: wheat;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    margin: 6px;
+    grid-area: title;
+    width: 25ch;
+    font-size: 1rem;
+}
+
+.card>p {
+    margin: 4px;
 }
 
 .footer {
