@@ -26,6 +26,10 @@ ul {
     width: min(50%, 75px);
 }
 
+.header h1 {
+    margin: 0px auto;
+}
+
 .library {
     background-color: rgb(10 10 10 / 50%);
     display: grid;
