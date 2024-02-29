@@ -71,8 +71,13 @@ ul {
     cursor: pointer;
 }
 
+.not-read path,
 .delete path {
     fill: red;
+}
+
+.read path {
+    fill: green;
 }
 
 .card p {
