@@ -8,12 +8,15 @@ const templates = {
 
 const myLibrary = [];
 
+let id = myLibrary.length;
+
 function Book(title, author, pages, read, coverImgUrl) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
     this.coverImgUrl = coverImgUrl;
+    this.id = id++;
 }
 
 function createElement(type, className, id) {
@@ -39,7 +42,7 @@ function cloneIcon(templateName) {
 }
 
 
-function displayBook({title, author, pages, read, coverImgUrl}, id) {
+function displayBook({title, author, pages, read, coverImgUrl, id}) {
     const card = createElement('div', 'card', id);
 
     const titleElement = createElement('h2', 'title');
@@ -64,6 +67,11 @@ function displayBook({title, author, pages, read, coverImgUrl}, id) {
 
     const readIcon = cloneIcon(templateName);
     const deleteIcon = cloneIcon('delete')
+    deleteIcon.addEventListener('click', () => {
+        const index = myLibrary.findIndex(item => item.id === id);
+        myLibrary.splice(index, 1);
+        library.removeChild(card);
+    });
 
     icons.appendChild(readIcon);
     icons.appendChild(deleteIcon);
