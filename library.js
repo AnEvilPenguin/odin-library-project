@@ -95,9 +95,6 @@ function addBookToLibrary(title, author, pages, read, coverImgUrl) {
     const newBook = new Book(title, author, pages, read, coverImgUrl);
     myLibrary.push(newBook);
     displayBook(newBook, myLibrary.length);
-    // TODO display book on page
-        // possibly delete all cards from library and rebuild from array?
-        // simply append new book?
 }
 
 // initial test book
