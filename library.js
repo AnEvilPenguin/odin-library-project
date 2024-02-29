@@ -101,5 +101,13 @@ addBookToLibrary(
     'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1356120567i/15808302.jpg'
 );
 
+// semi fail test book
+addBookToLibrary(
+    'An Empire Asunder',
+    'Evan Currie',
+    331,
+    false
+);
+
 
 // TODO allow delete of book from array.
