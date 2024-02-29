@@ -1,5 +1,11 @@
 const library = document.querySelector('.library');
 
+const templates = {
+    read: document.querySelector('.read-template'),
+    'not-read': document.querySelector('.not-read-template'),
+    delete: document.querySelector('.delete-template'),
+};
+
 const myLibrary = [];
 
 function Book(title, author, pages, read, coverImgUrl) {
@@ -14,9 +20,22 @@ function createElement(type, className, id) {
     const element = document.createElement(type);
 
     element.classList.add(className);
-    element.id = id;
+    if (id) {
+        element.id = id;
+    }
 
     return element;
+}
+
+function cloneIcon(templateName) {
+    const newIcon = templates[templateName].cloneNode(true);
+
+    const classes = [...newIcon.classList];
+    classes.forEach(name => newIcon.classList.remove(name));
+
+    newIcon.classList.add(templateName);
+
+    return newIcon;
 }
 
 
@@ -39,12 +58,21 @@ function displayBook({title, author, pages, read, coverImgUrl}, id) {
     content.appendChild(authorElement);
     content.appendChild(pagesElement);
 
+    const icons = createElement('div', 'icons');
+
+    const templateName = read ? 'read' : 'not-read';
+
+    const readIcon = cloneIcon(templateName);
+    const deleteIcon = cloneIcon('delete')
+
+    icons.appendChild(readIcon);
+    icons.appendChild(deleteIcon);
+
     const details = createElement('div', 'details');
     details.appendChild(content);
+    details.appendChild(icons);
 
     card.appendChild(details);
-
-    // TODO figure out how to SVG nicely.
 
     const img = createElement('img', 'cover');
     img.setAttribute('src', coverImgUrl ?? 'assets/cover-not-found.jpg');

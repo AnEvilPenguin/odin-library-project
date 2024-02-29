@@ -78,3 +78,8 @@ icons svg:first-of-type {
 .footer {
     background-color: goldenrod;
 }
+
+.invisible {
+    visibility: hidden;
+    display: none;
+}
