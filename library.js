@@ -8,7 +8,7 @@ const templates = {
 
 const dialog = document.querySelector("dialog");
 const addBookButton = document.querySelector('.add-book-button');
-const closeDialogButton = document.querySelector('dialog button');
+const closeDialogButton = document.querySelector('.cancel');
 
 addBookButton.addEventListener('click', () => {
     addBookButton.setAttribute('disabled', true);

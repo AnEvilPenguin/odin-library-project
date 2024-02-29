@@ -91,6 +91,19 @@ ul {
     opacity: 0.80;
 }
 
+form div {
+    display: flex;
+    margin: 0.5em 2em;
+}
+
+input {
+    margin-left: auto;
+}
+
+form div button {
+    margin: 0px auto;
+}
+
 .invisible {
     visibility: hidden;
     display: none;
