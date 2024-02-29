@@ -44,12 +44,12 @@ ul {
     padding: 20px;
     display: flex;
     flex-direction: column;
+    word-wrap: break-word;
 }
 
 .title {
     margin: 6px;
     grid-area: title;
-    width: 25ch;
     font-size: 1rem;
 }
 
