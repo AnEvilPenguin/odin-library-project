@@ -67,6 +67,14 @@ ul {
     width: 50px;
 }
 
+.delete {
+    cursor: pointer;
+}
+
+.delete path {
+    fill: red;
+}
+
 .card p {
     margin: 4px;
 }
