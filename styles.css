@@ -1,11 +1,14 @@
+:root {
+    --dimmer-color: rgb(10 10 10 / 50%);
+}
+
 body {
     padding: 0px;
     margin: 0px;
     display: grid;
-    grid-template-rows: 1fr 8fr 1fr;
+    grid-template-rows: 0.5fr 8fr 0.5fr;
     background-image: url("./assets/library.jpg");
     background-position: center;
-    height: 100vh;
 }
 
 body>* {
@@ -17,21 +20,18 @@ ul {
 }
 
 .header {
-    background-color: cyan;
+    background-color: var(--dimmer-color); 
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .header img {
     width: min(50%, 75px);
 }
 
-.header h1 {
-    margin: 0px auto;
-}
-
 .library {
-    background-color: rgb(10 10 10 / 50%);
+    background-color: var(--dimmer-color); 
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-template-rows: repeat(2, minmax(300px, 1fr));
@@ -83,7 +83,7 @@ ul {
 }
 
 .footer {
-    background-color: goldenrod;
+    background-color: var(--dimmer-color); 
 }
 
 ::backdrop {
