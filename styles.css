@@ -67,10 +67,6 @@ ul {
     width: 50px;
 }
 
-icons svg:first-of-type {
-    margin-left: auto;
-}
-
 .card p {
     margin: 4px;
 }
