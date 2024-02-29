@@ -47,8 +47,34 @@ function cloneIcon(templateName) {
     return newIcon;
 }
 
+function addIcons(element, book) {
+    const {id, read} = book;
+    const templateName = read ? 'read' : 'not-read';
 
-function displayBook({title, author, pages, read, coverImgUrl, id}) {
+    const readIcon = cloneIcon(templateName);
+    const deleteIcon = cloneIcon('delete')
+
+    readIcon.addEventListener('click', () => {
+        element.removeChild(readIcon);
+        element.removeChild(deleteIcon);
+
+        book.read = !read;
+        addIcons(element, book);
+    });
+
+    deleteIcon.addEventListener('click', () => {
+        const index = myLibrary.findIndex(item => item.id === id);
+        myLibrary.splice(index, 1);
+        library.removeChild(card);
+    });
+
+    element.appendChild(readIcon);
+    element.appendChild(deleteIcon);
+}
+
+
+function displayBook(book) {
+    const {title, author, pages, coverImgUrl, id} = book;
     const card = createElement('div', 'card', id);
 
     const titleElement = createElement('h2', 'title');
@@ -68,19 +94,7 @@ function displayBook({title, author, pages, read, coverImgUrl, id}) {
     content.appendChild(pagesElement);
 
     const icons = createElement('div', 'icons');
-
-    const templateName = read ? 'read' : 'not-read';
-
-    const readIcon = cloneIcon(templateName);
-    const deleteIcon = cloneIcon('delete')
-    deleteIcon.addEventListener('click', () => {
-        const index = myLibrary.findIndex(item => item.id === id);
-        myLibrary.splice(index, 1);
-        library.removeChild(card);
-    });
-
-    icons.appendChild(readIcon);
-    icons.appendChild(deleteIcon);
+    addIcons(icons, book);
 
     const details = createElement('div', 'details');
     details.appendChild(content);
