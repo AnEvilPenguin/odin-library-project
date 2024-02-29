@@ -6,6 +6,12 @@ const templates = {
     delete: document.querySelector('.delete-template'),
 };
 
+const addBookButton = document.querySelector('.add-book-button');
+addBookButton.addEventListener('click', () => {
+    addBookButton.setAttribute('disabled', true);
+    // TODO show form to add a new book
+});
+
 const myLibrary = [];
 
 let id = myLibrary.length;
