@@ -6,10 +6,18 @@ const templates = {
     delete: document.querySelector('.delete-template'),
 };
 
+const dialog = document.querySelector("dialog");
 const addBookButton = document.querySelector('.add-book-button');
+const closeDialogButton = document.querySelector('dialog button');
+
 addBookButton.addEventListener('click', () => {
     addBookButton.setAttribute('disabled', true);
-    // TODO show form to add a new book
+    dialog.showModal();
+});
+
+closeDialogButton.addEventListener('click', () => {
+    addBookButton.removeAttribute('disabled');
+    dialog.close();
 });
 
 const myLibrary = [];
